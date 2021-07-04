@@ -1,0 +1,412 @@
+<!-- include header -->
+<%- include('include/_header')  %>
+    <!-- /include header -->
+    <title>
+        <%= room !== undefined ? room : `Zokimet` %>
+    </title>
+    <link rel="stylesheet" href="/room.css">
+    <script>
+        // let allUsers = [];
+        let nameInput = "<%= user %> ";
+        let roomTitle = "<%= room %> ";
+        let meeting_id = "<%= meeting_id %> ";
+
+        console.log(meeting_id)
+            // allUsers.push({
+            //     nameInput,
+            //    profile: 'https://unsplash.com/photos/mEZ3PoFGs_k'
+            // })
+    </script>
+
+
+    </head>
+
+    <body class="welcome">
+        <span id="splash-overlay" class="splash"></span>
+        <span id="welcome" class="z-depth-4"></span>
+        <!-- <button class="btn">Open me</button> -->
+
+        <div class="modal-frame">
+            <div class="modal-body">
+                <div class="modal-inner">
+                    <button id="close" class="close"><span class="iconify" data-icon="ei:close" data-inline="false"></span></button>
+                    <div class="board-container">
+                        <div class="color-control">
+                            <button class="undo">undo</button>
+                            <button class="clear">clear</button>
+                            <div class="color-field red-color"></div>
+                            <div class="color-field blue-color"></div>
+                            <div class="color-field purple-color"></div>
+                            <div class="color-picker">
+                                <input type="color" name="" id="color-pic">
+                            </div>
+                            <input type="range" min="1" max="100" class="pen-range" />
+                        </div>
+                        <div class="board">
+                            <div id="sketch">
+                                <canvas id="paint"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-overlay"></div>
+        </div>
+        <main>
+            <div class="panel-left">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="/logo.svg" alt="logo" class="logo">
+                    </a>
+                </div>
+                <div class="users-container">
+                    <ul class="users">
+
+
+                        <!-- 
+                    <li class="user-active">
+                        <div class="user-profile">
+                            <div class="active"></div>
+                            <span class="iconify person" data-icon="ant-design:user-outlined"
+                                data-inline="false"></span>
+                        </div>
+                        <div class="user-media__control">
+                            <div class="user-vid waves-effect"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic waves-effect"><span class="iconify" data-icon="bi:mic"
+                                    data-inline="false"></span></div>
+                        </div>
+
+                        <h6 class="username"><span>James Zokah</span></h6>
+
+                    </li>
+                    <li class="user-active">
+                        <div class="user-profile">
+                            <div class="active"></div>
+                            <span class="iconify person" data-icon="ant-design:user-outlined"
+                                data-inline="false"></span>
+                        </div>
+                        <div class="user-media__control">
+                            <div class="user-vid"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                        </div>
+
+                        <h6 class="username"><span>James Zokah</span></h6>
+
+                    </li>
+                    <li class="user-active">
+                        <div class="user-profile">
+                            <div class="active"></div>
+                            <span class="iconify person" data-icon="ant-design:user-outlined"
+                                data-inline="false"></span>
+                        </div>
+                        <div class="user-media__control">
+                            <div class="user-vid waves-effect"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                        </div>
+
+                        <h6 class="username"><span>James Zokah</span></h6>
+
+                    </li>
+                    <li class="user-active">
+                        <div class="user-profile">
+                            <div class="active"></div>
+                            <span class="iconify person" data-icon="ant-design:user-outlined"
+                                data-inline="false"></span>
+                        </div>
+                        <div class="user-media__control">
+                            <div class="user-vid"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                        </div>
+
+                        <h6 class="username"><span>James Zokah</span></h6>
+
+                    </li>
+                    <li class="user-active">
+                        <div class="user-profile">
+                            <div class="active"></div>
+                            <span class="iconify person" data-icon="ant-design:user-outlined"
+                                data-inline="false"></span>
+                        </div>
+                        <div class="user-media__control">
+                            <div class="user-vid"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                        </div>
+
+                        <h6 class="username"><span>James Zokah</span></h6>
+
+                    </li>
+                    <li class="user-active">
+                        <div class="user-profile">
+                            <div class="active"></div>
+                            <span class="iconify person" data-icon="ant-design:user-outlined"
+                                data-inline="false"></span>
+                        </div>
+                        <div class="user-media__control">
+                            <div class="user-vid"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                        </div>
+
+                        <h6 class="username"><span>James Zokah</span></h6>
+
+                    </li>
+                    <li class="user-active">
+                        <div class="user-profile">
+                            <div class="active"></div>
+                            <span class="iconify person" data-icon="ant-design:user-outlined"
+                                data-inline="false"></span>
+                        </div>
+                        <div class="user-media__control">
+                            <div class="user-vid"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                        </div>
+
+                        <h6 class="username"><span>James Zokah</span></h6>
+
+                    </li> -->
+
+                    </ul>
+                </div>
+
+
+                <div class="contribute">
+                    <div class="raise-hand .ripple.dark">
+                        <img src="/hand-up.svg" alt="hands-up">
+                    </div>
+                </div>
+            </div>
+            <div class="main-panel">
+                <div class="participate-video">
+                    <!-- <div class="users-video local-video">
+                     <div class="user-video__control">
+                     <div class="user-vid user-video__icon"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic user-video__icon"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                             <p class="user-video__icon video-name"><span>James Zokah</span></p>
+
+                     </div>
+                </div>
+                <div class="users-video remote-video">
+                       <div class="user-video__control">
+                     <div class="user-vid user-video__icon"><span class="iconify" data-icon="bi:camera-video-off"
+                                    data-inline="false"></span></div>
+                            <div class="user-mic user-video__icon"><span class="iconify" data-icon="bi:mic" data-inline="false"></span>
+                            </div>
+                             <p class="user-video__icon video-name"><span>James Zokah</span></p>
+
+                     </div>
+                </div> -->
+                </div>
+                <div class="video-container">
+                    <div class="video-media"></div>
+                    <div class="screen-media"></div>
+                    <div class="menu">
+                        <div class="inner">
+                            <ul>
+                                <li class="menu-item"><a>Share File</a></li>
+                                <li class="menu-item"><a>Audio Media Type</a></li>
+                                <li class="menu-item"><a>Video Media Type</a></li>
+                                <li class="menu-item"><a>Invite New Participant</a></li>
+                                <li class="menu-item"><a>Security</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-controls display">
+                    <div class="media-control">
+
+                        <div class="control-vid startVideoButton"><a class="waves-effect ripple dark"><span class="iconify controls-icon"
+                                data-icon="bi:camera-video" data-inline="false"></span></a></div>
+                        <div class="control-vid hidden stopVideoButton"><a class="waves-effect ripple dark"><span class="iconify stop-icon" data-icon="bi:camera-video-off" data-inline="false"></span></span></a></div>
+
+                        <div class="control-mic startAudioButton"><a class="waves-effect ripple dark"><span class="iconify controls-icon"
+                                data-icon="bi:mic" data-inline="false"></span></a></div>
+                        <div class="control-mic hidden stopAudioButton"><a class="waves-effect ripple dark"><span class="iconify stop-icon" data-icon="bi:mic-mute" data-inline="false"></span></a></div>
+
+                        <div class="control-screen startScreenButton"><a class="waves-effect ripple dark"><span class="iconify controls-icon" data-icon="ic:outline-screen-share" data-inline="false"></span></a></div>
+
+                        <div class="control-screen hidden stopScreenButton"><a class="waves-effect ripple dark"><span class="iconify stop-icon" data-icon="ic:outline-stop-screen-share" data-inline="false"></span></a></div>
+
+                    </div>
+
+                    <div class="button-leave"><a class="btn-leave ripple dark">LEAVE</a></div>
+                    <div class="collab-control">
+                        <div class="control-board"><a class="board modal-popup waves-effect ripple dark"><span class="iconify controls-icon" data-icon="fluent:whiteboard-20-regular" data-inline="false"></span></a></div>
+                        <div class="control-chats"><a class="waves-effect ripple dark"><span class="iconify controls-icon" data-icon="et:chat"
+                                data-inline="false"></span></a></div>
+                        <div class="control-participate"><a class="waves-effect ripple dark"><span class="iconify controls-icon"
+                                data-icon="fluent:people-community-16-regular" data-inline="false"></span></a></div>
+                        <div class="control-menu"><a class="waves-effect ripple dark"><span class="iconify controls-icon" data-icon="bi:three-dots-vertical" data-inline="false"></span></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-right">
+                <!-- <div class="board-container">
+                 <div class="color-control">
+                    <button class="undo">undo</button>
+                    <button class="clear">clear</button>
+                   <div class="color-field red-color"></div>
+                   <div class="color-field blue-color"></div>
+                   <div class="color-field purple-color"></div>
+                    <div class="color-picker">
+                        <input type="color" name="" id="color-pic">
+                    </div>
+                    <input type="range" min="1" max="100" class="pen-range" />
+                </div> 
+               
+           <div class="board">
+                <div id="sketch">
+                    <canvas id="paint"></canvas>
+                </div>
+           </div>
+            </div> -->
+
+                <div class="chats-container">
+
+                    <img class="human-svg" src="/chat-images/human.svg" alt="human">
+                    <img class="circle-svg" src="/chat-images/circles.svg" alt="circles">
+                    <img class="pink-leaf-svg" src="/chat-images/leaf-pink.svg" alt="pink-leaf">
+                    <img class="blueblack-leaf-svg" src="/chat-images/leaf-blueblack.svg" alt="blueblack-leaf">
+
+
+                    <div class="chats glass-chats">
+                        <div class="chats-wrapper">
+                            <div class="display-chat-box">
+                                <ul class="display-chat">
+                                    <!-- <li>
+                                    <div class="message-body">
+                                        <div class="message-output">
+                                            <p>whats up brah what u diong?</p>
+                                        </div>
+                                        <div class="user-profile chat-avator"></div>
+                                        <span class="chat-user-name">James Zokah</span>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="message-body">
+                                        <div class="message-output">
+                                            <p>whats up brah what u diong?</p>
+                                        </div>
+                                        <div class="user-profile chat-avator"></div>
+                                        <span class="chat-user-name">James Zokah</span>
+
+                                    </div>
+                                </li>
+                               
+                               
+                                 chat me 
+                                <li>
+                                    <div class="chat-me">
+                                        <div class="message-body">
+                                            <div class="message-output-me">
+                                                <p>whats up brah what u diong?</p>
+                                            </div>
+                                            <div class="user-profile chat-avator chat-avator-me"></div>
+                                            <span class="chat-user-name__me">James Zokah</span>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                   
+                                    <div class="message-body">
+                                        <div class="message-output">
+                                            <p>whats up brah what u diong?</p>
+                                        </div>
+                                        <div class="user-profile chat-avator"></div>
+                                        <span class="chat-user-name">James Zokah</span>
+
+                                    </div>
+
+                                <li>
+                                    <div class="message-body">
+                                        <div class="message-output">
+                                            <p>whats up brah what u diong?</p>
+                                        </div>
+                                        <div class="user-profile chat-avator"></div>
+                                        <span class="chat-user-name">James Zokah</span>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="message-body">
+                                        <div class="message-output">
+                                            <p>whats up brah what u diong?</p>
+                                        </div>
+                                        <div class="user-profile chat-avator"></div>
+                                        <span class="chat-user-name">James Zokah</span>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="message-body">
+                                        <div class="message-output">
+                                            <p>whats up brah what u diong?</p>
+                                        </div>
+                                        <div class="user-profile chat-avator"></div>
+                                        <span class="chat-user-name">James Zokah</span>
+
+                                    </div>
+                                </li> -->
+                                </ul>
+                            </div>
+                            <div class="chat-message-box">
+                                <a class="emojis ripple dark"><span class="iconify emoji-icon" data-icon="bi:emoji-smile"
+                                    data-inline="false"></span></a>
+                                <div class="chat-input-container">
+                                    <input type="text" class="chat-input" id="chat-input" placeholder="Type Message ..">
+                                </div>
+                                <a class="send-message ripple dark"><img src="/send-chat.svg" alt="send"></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-container">
+                    <div class="main-menu">
+                        <div class="menu-content">
+                            <div class="control-mediaSelect hidden">
+                                <!-- <span class="iconify controls-icon mediaSelect-icon" data-icon="ic:baseline-greater-than" data-inline="false"></span> -->
+                                <div class="mediaSelect"><select name="mediaSelect" class="mediaSelect-icon" id="mediaSelect">
+                                    <optgroup label="Audio-Media" id="audio-select"></optgroup>
+                                    <optgroup label="Video-Media" id="video-select"></optgroup>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="select-file">
+                                <input type="file" multiple name="file" id="file">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <script>
+            audiojs.events.ready(function() {
+                var as = audiojs.createAll();
+            });
+        </script>
+        <script src="/modules/winbox.bundle.js" defer></script>
+        <script src="/activationcss.js"></script>
+        <!-- <script src="/board.bundle.min.js"></script> -->
+        <script src="/bundle.js"></script>
+
+        <!-- include footer -->
+        <%- include('include/_footer') %>
+            <!-- /include footer -->
