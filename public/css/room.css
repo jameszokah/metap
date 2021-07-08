@@ -2,7 +2,7 @@
 :root {
     --background-color: #2B1861;
     --side-panel-background-color: #120D4B;
-    --main-panel-width: 1099px;
+    --main-panel-width: 66vw;
 }
 
 * {
