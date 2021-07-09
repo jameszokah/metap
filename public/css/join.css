@@ -17,9 +17,20 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #120d4b5e;
+    clip-path: circle(90% at 0 90%);
+}
+
+
+
 
 .join-container {
-    background-color: #fff;
+    background-color: #2d2c2c;
     position: absolute;
     display: flex;
     padding: 20px 15px;
@@ -31,6 +42,7 @@ body {
     width: 80vw;
     height: 70vh;
 }
+
 
 .form-box {
     width: 60%;
