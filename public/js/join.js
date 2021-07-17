@@ -31,5 +31,5 @@ const initCamera = async () => {
    return stream;
 }
 
-getVideo();
+//getVideo();
 document.addEventListener('load', getVideo, false);
