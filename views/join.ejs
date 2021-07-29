@@ -1,0 +1,43 @@
+<!-- include header -->
+<%- include('include/_header') %>
+    <!-- /include header -->
+<title>
+    <%= title !==undefined ? title : `Zokimeet` %>
+</title>
+<link rel="stylesheet" href="/join.css">
+    </head>
+
+<body>
+    <div class="join-container">
+        <div class="form-box">
+            <div class="join">
+                <form method="POST" action="/room/<%= meetingID %> ">
+                    <div id="login">
+                        <label for="roomidInput"> Room </label>
+                       <div class="input-div">
+                            <input id="roomidInput" value="" type="text" name="room" placeholder="meeting title .." />
+                       </div>
+                        <!--<button id="createRoom" onclick="createRoom(roomid.value)" label="createRoom">Create Room</button>-->
+                        <br />
+                        <label for="nameInput"> Name </label>
+                        <div class="input-div">
+                            <input id='nameInput' value="" type="text" name="user" placeholder="user name .." />
+                        </div>
+                        <button id='joinButton'>Join</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="webcam-box">
+            <div class="webcam">
+            </div>
+            <a class="video-icon"><i class="fa fa-video-camera" aria-hidden="true"></i></a>
+            <a class="audio-icon"><i class="fa fa-microphone" aria-hidden="true"></i></a>
+
+            <button>capture</button>
+                   </div>
+    </div>
+        <script src="/join.js"></script>
+<!-- include footer -->
+<%- include('include/_footer') %>
+    <!-- /include footer -->
