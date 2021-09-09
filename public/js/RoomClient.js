@@ -363,7 +363,7 @@ class RoomClient {
         let producer = null;
         try {
             stream = screen ? await navigator.mediaDevices.getDisplayMedia() : await navigator.mediaDevices.getUserMedia(mediaConstraints)
-            console.log(navigator.mediaDevices.getSupportedConstraints(), 'logging sreams :', stream);
+            console.log(navigator.mediaDevices.getSupportedConstraints(), 'logging streams :', stream);
 
               window.stream  = stream;
 

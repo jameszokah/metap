@@ -4,6 +4,7 @@
     --background-color: #2B1861;
     --side-panel-background-color: #120D4B;
     --main-panel-width: 1099px;
+    --webcam-color: #2d2c2c;
 }
 
 * {
@@ -69,6 +70,10 @@ body::before {
     font-weight: 400;
 }
 
+.login {
+    position: relative;
+}
+
 .join .input-div {
     padding: 4px 10px;
     border-bottom: 1px solid #fff;
@@ -102,9 +107,21 @@ body::before {
     outline: none;
 }
 
+.join #joinButton {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(0, 174, 255);
+    margin: 40px auto;
+    width: 100%;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
 .webcam-box {
     width: 100%;
-    background-color: rgb(196, 247, 247);
+    background-color: var(--webcam-color);
     height: 100%;
     margin-left: 10px;
     position: relative;
@@ -115,15 +132,44 @@ body::before {
     height: 100%;
 }
 
+
+.btn-snap {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    padding: 7px;
+    display: grid;
+    align-content: center;
+    backdrop-filter: blur(40px);
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+}
+
+.btn-snap button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    margin-left: 5px;
+}
+
+.btn-snap button:hover {
+    background-color: rgba(243, 242, 242, 0.494);
+}
+
+
 .video-icon, .audio-icon {
     position: absolute;
     top: 50%;
-    right: 1%;
+    right: 3%;
 }
 
 .video-icon i, .audio-icon i {
     font-size: 40px;
-    color: var(--background-colr,rgb(0, 174, 255));
+    color: var(--webcam-color,rgb(0, 174, 255));
 }
 
 .video-icon {

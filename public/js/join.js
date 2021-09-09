@@ -3,12 +3,18 @@ const webCam = document.querySelector('.webcam');
 
 const video = document.createElement('video');
 
+
 const getVideo = async () => {
-    video.muted = false;
+    try {
+        video.muted = false;
     video.autoplay = true;
     video.srcObject = await initCamera();
     video.play();
     webCam.appendChild(video);
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 
@@ -31,5 +37,5 @@ const initCamera = async () => {
    return stream;
 }
 
-//getVideo();
-document.addEventListener('load', getVideo, false);
+getVideo();
+//document.addEventListener('load', getVideo, false);
