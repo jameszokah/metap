@@ -26,5 +26,9 @@
   "devDependencies": {
     "nodemon": "^2.0.10",
     "tinyify": "^3.0.0"
+  },
+  "engines": {
+    "node": "15.5.1"
   }
+  
 }
