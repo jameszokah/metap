@@ -406,6 +406,7 @@ class RoomClient {
                 elem.id = producer.id
                 elem.playsinline = false
                 elem.autoplay = true
+                elem.play()
                 elem.className = "vid"
                 //this.localMediaEl.appendChild(elem)
                 if (screen) {
@@ -498,6 +499,7 @@ class RoomClient {
                 elem.id = consumer.id
                 elem.playsinline = false
                 elem.autoplay = true
+                elem.play()
                 console.log('this.stream : ', this.stream, 'stream : ', stream)
                 if (stream && stream.getAudioTracks().length === 0) {
                     elem.className = "screen";
@@ -513,6 +515,7 @@ class RoomClient {
                 elem.id = consumer.id
                 elem.playsinline = false
                 elem.autoplay = true
+                elem.play()
                 this.remoteAudioEl.appendChild(elem)
             }
             consumer.on('trackended', function () {
