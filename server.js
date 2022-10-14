@@ -106,7 +106,7 @@ io.on('connection', socket => {
         if (roomList.has(room_id)) {
             callback('already exists')
         } else {
-            console.log('---created room--- ', room_id)
+            console.log('---created new room--- ', room_id)
             let worker = await getMediasoupWorker()
             roomList.set(room_id, new Room(room_id, worker, io))
             callback(room_id)
